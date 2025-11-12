@@ -142,7 +142,7 @@
     // ==== CONFIGURATION ======================================================
     // 1) After you deploy the Google Apps Script (see instructions below),
     //    paste the Web App URL into GAS_ENDPOINT and publish the site to GitHub Pages.
-    const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzpTyANrFtYdZGz-aiDFIDQfNFpwx7hGs2VSX_uMHrdIE6QzTZx_cuFS0WDnGUme-C_/exec"; // e.g., "https://script.google.com/macros/s/AKfycbx.../exec"
+    const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzRWlab_VlKRA1dWLwelq5iaPKRuB0OUCCxDQtxruhMUXhzJYP2GTiEWML7lhktCiyX/exec"; // e.g., "https://script.google.com/macros/s/AKfycbx.../exec"
 
     // 2) Optionally set a shared event identifier for your sheet
     const EVENT_ID = "hunters_glow_party_2025";
@@ -195,7 +195,7 @@
 
         const res = await fetch(GAS_ENDPOINT, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
           body: JSON.stringify(payload),
         });
 
@@ -272,5 +272,24 @@
   - Update the event details in the header section above. The UI is mobile-first
     and fits on a single screen for quick parent responses at the rink door.
   -->
-</body>
+
+  <!--
+  ======================= UPDATED Apps Script (Code.gs) =======================
+  // Paste this into Apps Script and REDEPLOY the Web app (New version)
+  function doGet(e) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ ok: true, method: 'GET', msg: 'RSVP endpoint is running. Use POST to submit.' }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
+  function doPost(e) {
+    try {
+      var body = {};
+      if (e && e.postData && e.postData.contents) {
+        // We send text/plain from the webpage to avoid CORS preflight; still JSON text
+        body = JSON.parse(e.postData.contents);
+      }
+
+      var ss = SpreadsheetApp.getActive();
 </html>
+
