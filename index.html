@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Glow Party RSVP – Texas Skatium</title>
+  <meta name="description" content="RSVP for Hunter's Glow Party at Texas Skatium. Skates, pizza, ice cream, and drinks are covered. Saturday, December 6, 4:00–5:30 PM. No outside food or beverages." />
+  <meta property="og:title" content="Glow Party RSVP – Texas Skatium" />
+  <meta property="og:description" content="Skates, pizza, ice cream, and drinks are covered. Saturday, December 6, 4:00–5:30 PM. RSVP here." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/social-card.png" />
+  <meta name="theme-color" content="#0ea5e9" />
+  
+  <!-- TailwindCSS CDN (no build needed for GitHub Pages) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Fallback font stack */
+    body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    .glow { box-shadow: 0 0 56px 8px rgba(14,165,233,0.25); }
+    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,0.08); }
+    .required:after { content:" *"; color:#ef4444; }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 selection:bg-sky-400 selection:text-slate-900">
+  <main class="mx-auto max-w-2xl px-4 py-10">
+    <!-- Header / Event Card -->
+    <section class="relative overflow-hidden rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 glow">
+      <div class="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-sky-500/20 blur-3xl"></div>
+      <div class="absolute -bottom-20 -left-28 h-72 w-72 rounded-full bg-fuchsia-500/10 blur-3xl"></div>
+      <div class="relative">
+        <h1 class="text-3xl font-extrabold tracking-tight text-white">Hunter’s Glow Party – Texas Skatium</h1>
+        <p class="mt-2 text-slate-300">Skates, pizza, <span class="font-semibold">ice cream</span>, and drinks are covered. Please RSVP below so we can plan food and skate assists.</p>
+        <ul class="mt-4 grid gap-2 text-sm text-slate-300 sm:grid-cols-2">
+          <li class="flex items-center gap-2"><span class="inline-block h-2 w-2 rounded-full bg-sky-400"></span><span><strong>Date:</strong> Saturday, <span class="whitespace-nowrap">December 6</span>, 4:00–5:30 PM</span></li>
+          <li class="flex items-center gap-2"><span class="inline-block h-2 w-2 rounded-full bg-sky-400"></span><span><strong>Location:</strong> Texas Skatium</span></li>
+          <li class="flex items-center gap-2"><span class="inline-block h-2 w-2 rounded-full bg-sky-400"></span><span><strong>Included:</strong> Skates, pizza, ice cream, drinks</span></li>
+          <li class="flex items-center gap-2"><span class="inline-block h-2 w-2 rounded-full bg-sky-400"></span><span><strong>Note:</strong> No outside food or beverages</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- RSVP Form -->
+    <section id="form-section" class="mt-8 rounded-2xl border border-slate-800 glass p-6">
+      <h2 class="text-xl font-semibold">RSVP Details</h2>
+      <p class="mt-1 text-sm text-slate-300">One submission per child is perfect. Fields marked with * are required.</p>
+
+      <form id="rsvpForm" class="mt-5 grid grid-cols-1 gap-5" novalidate>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="parentFirst" class="required block text-sm font-medium">Parent First Name</label>
+            <input id="parentFirst" name="parentFirst" type="text" required
+              class="mt-2 w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-2.5 text-slate-100 placeholder-slate-500 focus:border-sky-500 focus:outline-none" placeholder="Alex" />
+          </div>
+          <div>
+            <label for="parentLast" class="required block text-sm font-medium">Parent Last Name</label>
+            <input id="parentLast" name="parentLast" type="text" required
+              class="mt-2 w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-2.5 text-slate-100 placeholder-slate-500 focus:border-sky-500 focus:outline-none" placeholder="Smith" />
+          </div>
+        </div>
+
+        <div>
+          <label for="childName" class="required block text-sm font-medium">Child’s Name</label>
+          <input id="childName" name="childName" type="text" required
+            class="mt-2 w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-2.5 text-slate-100 placeholder-slate-500 focus:border-sky-500 focus:outline-none" placeholder="Taylor" />
+        </div>
+
+        <div>
+          <label for="phone" class="required block text-sm font-medium">Contact Number</label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" pattern="^[+]?\d[\d\s().-]{6,}$" required
+            class="mt-2 w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-2.5 text-slate-100 placeholder-slate-500 focus:border-sky-500 focus:outline-none" placeholder="(555) 555-1234" />
+          <p class="mt-1 text-xs text-slate-400">Any standard phone format is fine.</p>
+        </div>
+
+        <fieldset class="grid gap-3 rounded-2xl border border-slate-800 p-4">
+          <legend class="text-sm font-semibold text-slate-200">Will both parents join?</legend>
+          <div class="flex flex-wrap gap-4">
+            <label class="inline-flex items-center gap-2">
+              <input type="radio" name="parentsJoining" value="Both" class="h-4 w-4 border-slate-600 bg-slate-900" required />
+              <span>Both parents</span>
+            </label>
+            <label class="inline-flex items-center gap-2">
+              <input type="radio" name="parentsJoining" value="One" class="h-4 w-4 border-slate-600 bg-slate-900" />
+              <span>One parent</span>
+            </label>
+            <label class="inline-flex items-center gap-2">
+              <input type="radio" name="parentsJoining" value="No" class="h-4 w-4 border-slate-600 bg-slate-900" />
+              <span>Dropping off only</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="grid gap-3 rounded-2xl border border-slate-800 p-4">
+          <legend class="text-sm font-semibold text-slate-200">Pizza Preference</legend>
+          <div class="flex flex-wrap gap-4">
+            <label class="inline-flex items-center gap-2">
+              <input type="radio" name="pizza" value="Cheese" class="h-4 w-4 border-slate-600 bg-slate-900" required />
+              <span>Cheese</span>
+            </label>
+            <label class="inline-flex items-center gap-2">
+              <input type="radio" name="pizza" value="Pepperoni" class="h-4 w-4 border-slate-600 bg-slate-900" />
+              <span>Pepperoni</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="flex items-center justify-between rounded-2xl border border-slate-800 p-4">
+          <label class="inline-flex items-center gap-2">
+            <input id="skateAssist" name="skateAssist" type="checkbox" class="h-4 w-4 border-slate-600 bg-slate-900" />
+            <span>Request a Skate Assist for the kid</span>
+          </label>
+          <span class="text-xs text-slate-400">We’ll reserve walkers as available</span>
+        </div>
+
+        <div class="flex items-start gap-2 text-sm">
+          <input id="consent" type="checkbox" class="mt-1 h-4 w-4 border-slate-600 bg-slate-900" required />
+          <label for="consent" class="text-slate-300">I confirm the info is accurate and agree to be contacted if there are updates.</label>
+        </div>
+
+        <button id="submitBtn" type="submit" class="group inline-flex items-center justify-center gap-2 rounded-xl bg-sky-500 px-5 py-3 font-semibold text-slate-900 shadow-lg transition hover:bg-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-slate-950">
+          Submit RSVP
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 transition group-hover:translate-x-0.5"><path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7 7a.75.75 0 0 1 0 1.06l-7 7a.75.75 0 1 1-1.06-1.06L18.94 12l-5.97-5.97a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M3 12.75a.75.75 0 0 1 0-1.5h16.5a.75.75 0 0 1 0 1.5H3Z" clip-rule="evenodd"/></svg>
+        </button>
+
+        <p id="status" class="hidden rounded-xl border border-slate-800 bg-slate-900/70 p-4 text-sm"></p>
+      </form>
+
+      <!-- Success state (hidden until submitted) -->
+      <div id="success" class="mt-5 hidden rounded-2xl border border-emerald-800/50 bg-emerald-900/30 p-5">
+        <h3 class="text-lg font-semibold text-emerald-300">Thanks! Your RSVP is in. 🎉</h3>
+        <p class="mt-1 text-sm text-emerald-200">We’ll see you at Texas Skatium on Saturday, December 6, 4:00–5:30 PM. You’ll receive any updates at the contact number provided.</p>
+      </div>
+    </section>
+
+    <!-- Footer / Policies -->
+    <footer class="mt-10 text-center text-xs text-slate-400">
+      <p>Questions? Text David (Hunter’s dad).</p>
+      <p class="mt-1">This form collects RSVP details solely to plan food and skate assists. Data isn’t shared.</p>
+    </footer>
+  </main>
+
+  <script>
+    // ==== CONFIGURATION ======================================================
+    // 1) After you deploy the Google Apps Script (see instructions below),
+    //    paste the Web App URL into GAS_ENDPOINT and publish the site to GitHub Pages.
+    const GAS_ENDPOINT = ""; // e.g., "https://script.google.com/macros/s/AKfycbx.../exec"
+
+    // 2) Optionally set a shared event identifier for your sheet
+    const EVENT_ID = "hunters_glow_party_2025";
+
+    // ==== HELPER FUNCTIONS ====================================================
+    const $ = (sel) => document.querySelector(sel);
+
+    function formToJSON(form) {
+      const data = new FormData(form);
+      const payload = Object.fromEntries(data.entries());
+      payload.skateAssist = !!data.get("skateAssist");
+      payload.eventId = EVENT_ID;
+      // Basic normalization
+      payload.parentFirst = (payload.parentFirst || "").trim();
+      payload.parentLast  = (payload.parentLast  || "").trim();
+      payload.childName   = (payload.childName   || "").trim();
+      payload.phone       = (payload.phone       || "").trim();
+      return payload;
+    }
+
+    function showStatus(msg, good=false) {
+      const el = $("#status");
+      el.textContent = msg;
+      el.classList.remove("hidden");
+      el.classList.toggle("border-emerald-700", good);
+      el.classList.toggle("text-emerald-300", good);
+    }
+
+    function hideStatus() { $("#status").classList.add("hidden"); }
+
+    // ==== SUBMISSION ==========================================================
+    document.getElementById("rsvpForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      hideStatus();
+
+      const btn = $("#submitBtn");
+      btn.disabled = true; btn.classList.add("opacity-70");
+
+      // Front-end validation
+      if (!e.target.checkValidity()) {
+        showStatus("Please complete required fields marked with *.");
+        btn.disabled = false; btn.classList.remove("opacity-70");
+        return;
+      }
+
+      const payload = formToJSON(e.target);
+
+      try {
+        if (!GAS_ENDPOINT) throw new Error("Missing endpoint. Paste your Apps Script Web App URL into GAS_ENDPOINT.");
+
+        const res = await fetch(GAS_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        if (!res.ok) throw new Error(`Server error: ${res.status}`);
+        const data = await res.json().catch(() => ({}));
+
+        // Success UI
+        $("#form-section form").classList.add("hidden");
+        $("#success").classList.remove("hidden");
+      } catch (err) {
+        console.error(err);
+        showStatus(err.message || "Submission failed. Try again in a moment.");
+      } finally {
+        btn.disabled = false; btn.classList.remove("opacity-70");
+      }
+    });
+  </script>
+
+  <!--
+  ============================================================================
+  HOW TO STORE SUBMISSIONS IN GOOGLE SHEETS (5–10 minutes)
+  ============================================================================
+  1) Create a new Google Sheet named: RSVPs – Hunter Glow Party
+     Add a header row (A1:H1): timestamp, eventId, parentFirst, parentLast, childName, parentsJoining, pizza, skateAssist, phone
+
+  2) Extensions → Apps Script. Replace Code.gs with the script below and Save.
+
+  3) Deploy: Click “Deploy” → “New deployment” → Type: Web app
+     - Description: RSVP endpoint
+     - Execute as: Me (your account)
+     - Who has access: Anyone (or Anyone with the link)
+     - Deploy → Authorize if prompted. Copy the Web App URL.
+
+  4) Back in this HTML file, set GAS_ENDPOINT to that URL and publish this page to GitHub Pages.
+
+  ---------------------- Apps Script (Code.gs) ----------------------
+  function doPost(e) {
+    try {
+      const body = JSON.parse(e.postData.contents);
+      const ss = SpreadsheetApp.getActive();
+      const sh = ss.getSheets()[0];
+      const row = [
+        new Date(),
+        body.eventId || "",
+        body.parentFirst || "",
+        body.parentLast || "",
+        body.childName || "",
+        body.parentsJoining || "",
+        body.pizza || "",
+        body.skateAssist ? "Yes" : "No",
+        body.phone || ""
+      ];
+      sh.appendRow(row);
+      return ContentService
+        .createTextOutput(JSON.stringify({ ok: true }))
+        .setMimeType(ContentService.MimeType.JSON);
+    } catch (err) {
+      return ContentService
+        .createTextOutput(JSON.stringify({ ok:false, error: String(err) }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+  }
+  ------------------------------------------------------------------
+
+  OPTIONAL: Prevent duplicates by same child/phone
+  - Before appendRow, scan existing rows for a match and skip/overwrite as desired.
+
+  QR CODE FOR YOUR INVITES
+  - After you publish the page (e.g., https://<your-username>.github.io/party),
+    you can generate a QR code pointing to that URL using any QR code site. 
+    Many printers (FedEx/Office Depot) can print QR stickers from a URL.
+
+  CONTENT EDITS
+  - Update the event details in the header section above. The UI is mobile-first
+    and fits on a single screen for quick parent responses at the rink door.
+  -->
+</body>
+</html>
